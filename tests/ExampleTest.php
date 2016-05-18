@@ -11,9 +11,14 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
+//    use WithoutMiddleware;
     public function testBasicExample()
     {
-        $this->visit('/')
-             ->see('Laravel 5');
+        $this
+            ->withSession(['foo' => 'bar'])
+            -> visit('/inventory')
+
+
+           ;
     }
 }
